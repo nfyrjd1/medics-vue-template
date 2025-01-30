@@ -1,6 +1,8 @@
 {
   "name": "project_name",
   "version": "1.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
     "set-node": "nvm use 22",
     "app-install": "nvm install 22 && npm run set-node && npm ci",
