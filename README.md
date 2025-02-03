@@ -1,4 +1,4 @@
-# Компонент: project_name
+# Компонент: medics-vue-template
 
 # Команды
 

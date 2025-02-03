@@ -8,7 +8,7 @@ import useLoading from '@/composables/useLoading';
 
 /** Право на изменение категорий документов */
 export const NAME_RIGHT: Right = {
-  component: 'project_name',
+  component: 'medics-vue-template',
   right: 'right_name',
 };
 
