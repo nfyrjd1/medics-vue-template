@@ -1,3 +1,11 @@
+# Установка
+
+1. `npx degit https://github.com/nfyrjd1/medics-vue-template MedicsVueTemplate`
+2. `cd MedicsVueTemplate`
+3. `npm install`
+4. Заменить `medics-vue-template` в проекте на название вашего компонента
+5. Удалить эти строки
+
 # Компонент: medics-vue-template
 
 # Команды
