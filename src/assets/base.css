@@ -6,6 +6,8 @@
   --header-bg: #fff;
   /** Цвет выпадающего меню пользователя */
   --dropdown-bg: #efefef;
+  /** Цвет кнопки выхода из под пользователя */
+  --user-fallback-bg: lightgoldenrodyellow;
 
   /** Ширина левого меню при открытии */
   --sidebar-width: 250px;
@@ -37,6 +39,7 @@
 [data-bs-theme='dark'] {
   --header-bg: var(--bs-tertiary-bg);
   --dropdown-bg: var(--bs-body-bg);
+  --user-fallback-bg: #4A4A3E;
 
   --sidebar-bg: #283243;
   --sidebar-hover-bg: #466495;
@@ -91,6 +94,10 @@
     &:hover {
       color: rgb(var(--bs-link-color-rgb));
       background-color: var(--bs-tertiary-bg);
+    }
+
+    &#userFallback {
+      background-color: var(--user-fallback-bg);
     }
   }
 }
