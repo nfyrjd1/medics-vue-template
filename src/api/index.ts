@@ -19,10 +19,6 @@ const apiClient = axios.create({
   },
 });
 
-if (import.meta.env.DEV) {
-  apiClient.defaults.headers.common['x-access-token'] = import.meta.env.VITE_APP_TOKEN;
-}
-
 interface ServerErrorResponse {
   error?: {
     data?: {

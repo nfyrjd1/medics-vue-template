@@ -1,4 +1,4 @@
-/** Общие классы, применимые к любому компоненту */
+/** Стили для портала */
 :root {
   /** Высота шапки */
   --header-height: 55px;
@@ -39,7 +39,7 @@
 [data-bs-theme='dark'] {
   --header-bg: var(--bs-tertiary-bg);
   --dropdown-bg: var(--bs-body-bg);
-  --user-fallback-bg: #4A4A3E;
+  --user-fallback-bg: #4a4a3e;
 
   --sidebar-bg: #283243;
   --sidebar-hover-bg: #466495;
