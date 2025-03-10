@@ -12,6 +12,8 @@ import IconsResolve from 'unplugin-icons/resolver';
 
 import vueDevTools from 'vite-plugin-vue-devtools';
 
+import { visualizer } from 'rollup-plugin-visualizer';
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Подгружаем переменные окружения
@@ -21,11 +23,19 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       // Подключение библиотек компонентов
-      Components({ resolvers: [BootstrapVueNextResolver(), IconsResolve()], dts: true }),
+      Components({
+        resolvers: [BootstrapVueNextResolver(), IconsResolve()],
+        dts: true,
+      }),
       // Подключение иконок с возможность авто-загрузки используемых
-      Icons({ compiler: 'vue3', autoInstall: true }),
+      Icons({
+        compiler: 'vue3',
+        autoInstall: true,
+      }),
       // Инструменты разработчика
       vueDevTools(),
+      // Анализ размера бандлов
+      visualizer()
     ],
 
     // Базовый путь приложения
@@ -39,14 +49,19 @@ export default defineConfig(({ mode }) => {
     },
 
     // Папка куда складываются генерируемые скрипты/стили/html'ка
-    build: { outDir: '../static', emptyOutDir: true },
+    build: {
+      outDir: '../static',
+      emptyOutDir: true,
+    },
 
     // Прокси сервер на api для обхода cors
     server: {
       proxy: {
         '/api': {
           target: env.VITE_APP_SERVER_URL ?? '/api',
-          headers: { 'x-access-token': env.VITE_APP_TOKEN },
+          headers: {
+            'x-access-token': env.VITE_APP_TOKEN,
+          },
         },
       },
     },
@@ -56,8 +71,6 @@ export default defineConfig(({ mode }) => {
         // Позволяет использовать @ как элиас для корня приложения
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
-      // Если у нас код "import folder/index.js", то можно написать "import folder"
-      extensions: ['.js', '.ts', '.vue', '.json'],
     },
   } satisfies UserConfig;
 });

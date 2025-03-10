@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import NotificationContainer from '@/components/AppNotification.vue';
-import HelloWorld from './components/HelloWorld.vue';
+import AppContainer from './components/app/AppContainer.vue';
 </script>
 
 <template>
-  <HelloWorld />
+  <!-- Контейнер приложения -->
+  <AppContainer />
 
   <!-- Вывод нотисов -->
-  <NotificationContainer />
+  <BToastOrchestrator />
+
+  <!-- Вывод модалок кодом -->
+  <BModalOrchestrator />
 </template>
 
 <style></style>

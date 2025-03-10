@@ -1,19 +1,19 @@
 # Установка
 
-1. `npx degit https://github.com/nfyrjd1/medics-vue-template MedicsVueTemplate`
-2. `cd MedicsVueTemplate`
+1. `npx degit https://github.com/nfyrjd1/medics-vue-template medicsVueTemplate`
+2. `cd medicsVueTemplate`
 3. `npm install`
 4. Заменить `medics-vue-template` в проекте на название вашего компонента
 5. Удалить эти строки
 
 # Компонент: medics-vue-template
 
-# Команды
+## Команды
 
-Устанавливает нужную ноду и пакеты:  
+Устанавливает нужную ноду и пакеты (нужен [nvm](https://github.com/nvm-sh/nvm)):  
 `npm run app-install`
 
-Если установлено и нужно только переключить ноду:  
+Если установлено и нужно только переключить ноду (нужен [nvm](https://github.com/nvm-sh/nvm)):  
 `npm run set-node`
 
 Сервер для разработки:  
@@ -22,7 +22,13 @@
 Сборка:  
 `npm run build`
 
-# Пакеты:
+Линтер + Форматировщик:  
+`npm run lf`
+
+Обновление пакетов:  
+`npm run check-updates`
+
+## Пакеты:
 
 - `vue` - Vue 3. [Документация](https://vuejs.org/). Необходимо поставить расширение в vscode [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 - `vue-router` - Роутер. [Документация](https://router.vuejs.org/guide/)
@@ -38,14 +44,14 @@
 - Линтер и форматировщик:
   - `eslint` - Линтер. Необходимо поставить расширение в vscode [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - `prettier` - Форматировщик. Необходимо поставить расширение в vscode [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - `prettier-plugin-organize-imports` - Форматирование порядка импортов
   - `eslint-plugin-vue` - Официальный плагин ESLint для Vue.js
-  - `@vue/eslint-config-prettier`
+  - `eslint-config-prettier`
   - `@vue/eslint-config-typescript`
 - Тайпскрипт:
   - `typescript`
   - `@vue/tsconfig`
   - `vue-tsc`
-  - `@tsconfig/node22`
   - `@types/node`
   - `jiti`
 - Сборщик:
@@ -53,3 +59,4 @@
   - `vite`
 - `npm-run-all2` - Запуск нескольких скриптов в параллели (используется в скрипте npm run build)
 - `vite-plugin-vue-devtools` - Дебагер
+- `rollup-plugin-visualizer` - Формирует отчет по созданному бандлу

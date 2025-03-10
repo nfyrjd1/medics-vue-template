@@ -1,7 +1,6 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
-import type { Right } from '@/types';
+import { useAppTitle } from '@medics/medics-vue-components';
 import { nextTick } from 'vue';
-import useAppTitle from '@/composables/useAppTitle';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
 //Расширяем объект meta у роута
 declare module 'vue-router' {
@@ -10,8 +9,6 @@ declare module 'vue-router' {
     preventUpdateTitle?: boolean;
     /** Изменить заголовок страницы на указанный */
     title?: string;
-    /** Чтобы зайти на роут нужно иметь указанное право */
-    right?: Right;
   }
 }
 
@@ -22,6 +19,16 @@ const router = createRouter({
       path: '/index.php',
       redirect: { path: '/', query: {} },
     },
+
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: () => import('@/views/HelloWorld.vue'),
+      meta: {
+        title: 'Hello World!',
+      },
+    },
+
     {
       path: '/error/403',
       name: 'Error403',
@@ -31,6 +38,7 @@ const router = createRouter({
         title: 'Ошибка',
       },
     },
+
     {
       path: '/error/404',
       alias: '/:pathMatch(.*)*',
@@ -41,7 +49,7 @@ const router = createRouter({
         title: 'Ошибка',
       },
     },
-  ] as RouteRecordRaw[],
+  ] satisfies RouteRecordRaw[],
 });
 
 //Изменение заголовка страницы

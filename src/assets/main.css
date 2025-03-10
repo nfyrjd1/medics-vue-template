@@ -1,3 +1,19 @@
-@import './base.css';
+@import '@medics/medics-vue-components/styles.css';
+@import '@medics/medics-vue-components/medics-styles.css';
 
 /** Классы применимые только к текущему компоненту */
+
+/** Только для разработки (Страница занимает всю высоту) */
+body:not(.c-app) {
+    min-height: 100vh;
+    display: flex;
+}
+
+/** Приложение - на всю доступную высоту */
+#app,
+.modal {
+    max-width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

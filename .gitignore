@@ -3,6 +3,7 @@ node_modules
 /dist
 vite.config.ts.*.mjs
 /.vite
+stats.html
 
 # local env files
 .env.local
